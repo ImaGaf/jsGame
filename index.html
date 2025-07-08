@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./style.css">
+  <title>Juego de Memoria</title>
+</head>
+<body>
+<div id="bats-container"></div>
+<div id="particles-js"></div>
+<div class="contenedor">
+  <h1>Juego de Memoria</h1>
+  <div class="info">
+    <span id="intentos">Intentos restantes: <strong>15</strong></span>
+  </div>
+  <div class="tablero" id="tablero"></div>
+
+  <div id="mensajeFinal" class="mensajeFinal oculto">
+    <div class="mensaje-contenido" id="mensajeTexto"></div>
+    <button id="reiniciar">Jugar otra vez</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.05 },
+      size: { value: 80, random: true },
+      move: {
+        enable: true,
+        speed: 0.5,
+        direction: "none",
+        out_mode: "out"
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: false },
+        onclick: { enable: false }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+
+<script src="./main.js"></script>
+</body>
+</html>

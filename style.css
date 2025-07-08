@@ -1,0 +1,164 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, hsl(0, 22%, 25%), #1a1a1a);
+}
+
+h1{
+    margin-bottom: 3rem;
+}
+
+.contenedor {
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 1080px;
+  box-sizing: border-box;
+}
+
+.info {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(6, 150px);
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carta {
+  width: 150px;
+  height: 180px;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cara {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.frente {
+  transform: rotateY(180deg);
+  background: #ffffff;
+}
+
+.frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.reverso {
+  background: #455a64;
+  background-image: url("./assets/imgs/cardback.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.carta.volteada .frente {
+  transform: rotateY(0deg);
+}
+
+.carta.volteada .reverso {
+  transform: rotateY(180deg);
+}
+
+.frente,
+.reverso {
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.mensajeFinal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.mensaje-contenido {
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #4caf50;
+  animation: aparecerZoom 1s ease forwards;
+  text-align: center;
+}
+
+.mensajeFinal.perdida .mensaje-contenido {
+  background: linear-gradient(135deg, #f44336, #e91e63);
+  box-shadow: 0 0 30px #e91e63;
+}
+
+@keyframes aparecerZoom {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+#reiniciar {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+#reiniciar:hover {
+  transform: scale(1.1);
+}
+
+.oculto {
+  display: none !important;
+}
