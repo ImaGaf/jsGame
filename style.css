@@ -162,3 +162,25 @@ h1{
 .oculto {
   display: none !important;
 }
+
+.modal-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-video video {
+  width: 70%;
+  max-width: 100%;
+  max-height: 100%;
+  border: 5px solid white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px white;
+}
