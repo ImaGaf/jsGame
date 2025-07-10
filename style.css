@@ -19,8 +19,9 @@ body {
   background: linear-gradient(to bottom, hsl(0, 22%, 25%), #1a1a1a);
 }
 
-h1{
-    margin-bottom: 3rem;
+h1 {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
 }
 
 .contenedor {
@@ -28,6 +29,7 @@ h1{
   color: white;
   width: 100%;
   max-width: 1080px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -151,7 +153,7 @@ h1{
   border-radius: 10px;
   background: #ffffff;
   color: #333;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s;
 }
 
@@ -183,4 +185,60 @@ h1{
   border: 5px solid white;
   border-radius: 20px;
   box-shadow: 0 0 20px white;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tablero {
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+  }
+
+  .carta {
+    width: 100px;
+    height: 120px;
+  }
+
+  .cara {
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+
+  .mensaje-contenido {
+    font-size: 2rem;
+    padding: 20px 30px;
+  }
+
+  #reiniciar {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .modal-video video {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tablero {
+    grid-template-columns: repeat(2, 90px);
+    gap: 10px;
+  }
+
+  .carta {
+    width: 90px;
+    height: 110px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .mensaje-contenido {
+    font-size: 1.5rem;
+  }
 }
